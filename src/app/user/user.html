@@ -1,0 +1,11 @@
+<p>user works!</p>
+
+<p>{{ name }} -> {{ name | uppercase }} -> {{ name | star | reverse }}</p>
+<h1>Purchases from {{ company | titlecase }} on {{ purchasedOn | date }}</h1>
+<p>Total: {{ amount | currency }}</p>
+<p>Total: {{ amount | currency: 'BRL' }}</p>
+<ul>
+  <li>Number with "decimal" {{ num | number: '3.2-2' }}</li>
+  <li>Date with "date" {{ birthday | date: 'medium' }}</li>
+  <li>Currency with "currency" {{ cost | currency }}</li>
+</ul>

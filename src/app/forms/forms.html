@@ -1,0 +1,56 @@
+<p>Framework: {{ favoriteFramework }}</p>
+<label for="framework">
+  Favorite framework:
+  <input
+    id="framework"
+    type="text"
+    [(ngModel)]="favoriteFramework"
+    class="outline-none border border-gray-300 rounded p-2 hover:border-gray-400 focus:border-blue-500 transition-colors"
+  />
+</label>
+<button class="bg-blue-500 text-white p-2 rounded" (click)="showFavoriteFramework()">
+  Show Framework
+</button>
+
+<div class="border-b my-10"></div>
+<h2>Profile Form</h2>
+<p>Name: {{ profileForm.value.name }}</p>
+<p>Email: {{ profileForm.value.email }}</p>
+
+<form [formGroup]="profileForm" (submit)="handleSubmit()">
+  <label for="name">
+    Name:
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      class="outline-none border border-gray-300 rounded p-2 hover:border-gray-400 focus:border-blue-500 transition-colors"
+      [class]="
+        profileForm.get('name')?.invalid && profileForm.get('name')?.touched ? 'border-red-500' : ''
+      "
+    />
+  </label>
+
+  <label for="email">
+    Email:
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      class="outline-none border border-gray-300 rounded p-2 hover:border-gray-400 focus:border-blue-500 transition-colors"
+      [class]="
+        profileForm.get('email')?.invalid && profileForm.get('email')?.touched
+          ? 'border-red-500'
+          : ''
+      "
+    />
+  </label>
+  <button
+    class="bg-blue-500 text-white p-2 rounded"
+    type="submit"
+    [class]="profileForm.valid ? 'bg-blue-500' : 'bg-gray-400 cursor-not-allowed'"
+    [disabled]="!profileForm.valid"
+  >
+    Submit
+  </button>
+</form>
