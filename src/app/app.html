@@ -1,8 +1,7 @@
 <nav class="flex gap-2 p-2 border-b bg-gray-300 mb-10">
-  <a routerLink="/" class="hover:underline">Home</a>
-  <a routerLink="/user" class="hover:underline">User</a>
-  <a routerLink="/forms" class="hover:underline">Forms</a>
-  <a routerLink="/dependency" class="hover:underline">Dependency</a>
+  @for (route of routes; track route.path) {
+    <a [routerLink]="route.path">{{ route.title }}</a>
+  }
 </nav>
 
 <router-outlet />

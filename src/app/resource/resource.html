@@ -1,0 +1,30 @@
+@if (userService.userResource.status() == 'error') {
+  <p>Error loading data: {{ userService.userResource.error() }}</p>
+} @else {
+  @if (userService.userResource.isLoading()) {
+    <p>Loading data...</p>
+  } @else if (userService.userResource.hasValue()) {
+    <p>User First Name: {{ userService.firstName() }}</p>
+  } @else {
+    <p>No data available.</p>
+  }
+}
+
+<input
+  type="text"
+  [value]="userService.userId()"
+  (input)="userService.userId.set($event.target.value)"
+/>
+
+<button (click)="userService.userResource.reload()">Refresh</button>
+
+<p>Resource status: {{ userService.userResource.status() }}</p>
+<p>Resource error: {{ userService.userResource.error() }}</p>
+<p>Resource loading: {{ userService.userResource.isLoading() }}</p>
+<p>
+  Resource value:
+  <code>{{ userService.userResource.value() | json }}</code>
+</p>
+<p>
+  <button (click)="userService.userResource.destroy()">Destroy Resource</button>
+</p>
