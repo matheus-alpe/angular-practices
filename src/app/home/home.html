@@ -1,1 +1,15 @@
 <p>home works!</p>
+
+<p>Count: {{ count() }} (Double: {{ counterState.doubleCount() }})</p>
+<button (click)="increment()">Increment</button>
+
+<p>{{ counterState.conditionalCount() }}</p>
+<button (click)="counterState.toggleConditionalCount()">Toggle Conditional Count</button>
+
+<p>Selected Shipping Option: {{ shippingState.selectedOption().name }}</p>
+
+<select name="shippingOptions" id="shippingOptions" (change)="changeShippingOption($event)">
+  @for (option of shippingState.shippingOptions(); track option.id) {
+    <option [selected]="option.id === shippingState.selectedOption().id">{{ option.name }}</option>
+  }
+</select>
