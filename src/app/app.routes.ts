@@ -26,4 +26,9 @@ export const routes: Routes = [
     title: 'Resource',
     loadComponent: () => import('./resource/resource').then((m) => m.Resource),
   },
+  {
+    path: 'components',
+    title: 'Components',
+    loadComponent: () => import('./components/components').then((m) => m.Components),
+  },
 ];

@@ -1,4 +1,4 @@
-<nav class="flex gap-2 p-2 border-b bg-gray-300 mb-10">
+<nav style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem">
   @for (route of routes; track route.path) {
     <a [routerLink]="route.path">{{ route.title }}</a>
   }

@@ -1,0 +1,9 @@
+p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: purple;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 1rem;
+}

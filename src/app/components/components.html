@@ -1,0 +1,16 @@
+<p>components works!</p>
+
+<component-logo [title]="text()" />
+
+<component-text value="sup" />
+<component-text text="sup on alias" />
+<component-text />
+<component-range [(value)]="volume" (valueChanged)="handleVolumeChange($event)" />
+
+<component-card>
+  <div header>new header</div>
+  <div header>another new header</div>
+  <component-card>oi</component-card>
+  <div>inside of default content</div>
+  <div footer>new footer</div>
+</component-card>

@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+
+  > div {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .card-header {
+    border: 1px dashed red;
+  }
+
+  .card-content {
+    border: 1px dashed blue;
+  }
+
+  .card-footer {
+    border: 1px dashed purple;
+  }
+}
