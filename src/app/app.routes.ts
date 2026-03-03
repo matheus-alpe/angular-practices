@@ -31,4 +31,9 @@ export const routes: Routes = [
     title: 'Components',
     loadComponent: () => import('./components/components').then((m) => m.Components),
   },
+  {
+    path: 'life-cycle',
+    title: 'Life Cycle',
+    loadComponent: () => import('./life-cycle/life-cycle').then((m) => m.LifeCycle),
+  },
 ];
