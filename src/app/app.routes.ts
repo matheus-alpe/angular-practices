@@ -36,4 +36,9 @@ export const routes: Routes = [
     title: 'Life Cycle',
     loadComponent: () => import('./life-cycle/life-cycle').then((m) => m.LifeCycle),
   },
+  {
+    path: 'templates',
+    title: 'Templates',
+    loadComponent: () => import('./templates/templates').then((m) => m.Templates),
+  },
 ];
